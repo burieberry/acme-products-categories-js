@@ -10,7 +10,8 @@
   "author": "Burcu Noyan",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "nunjucks": "^3.0.1"
   },
   "devDependencies": {}
 }
