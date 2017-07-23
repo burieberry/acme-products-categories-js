@@ -1,12 +1,16 @@
 {
   "name": "acme-product-categories",
   "version": "1.0.0",
-  "description": "",
+  "description": "acme products now with categories",
   "main": "README.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "author": "Burcu Noyan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "devDependencies": {}
 }
