@@ -15,8 +15,11 @@
     <h1>ACME Product Categories</h1>
     <ul class="nav nav-tabs">
       <li class="active"><a href="">Home</a></li>
-      <li><a href="#">Menu 1</a></li>
-      <li><a href="#">Menu 2</a></li>
+
+      {% for category in categories %}
+      <li><a href="/categories/{{ category }}">{{ category }}</a></li>
+      {% endfor %}
+
     </ul>
   </header>
 
