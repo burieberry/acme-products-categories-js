@@ -1,12 +1,6 @@
 const router = require('express').Router();
 const db = require('../db');
 
-router.get('/', function(req, res) {
-  res.render('products', {
-    categories: db.getCategoryNames()
-  });
-});
-
 router.get('/:name/products', function(req, res) {
   res.render('products', {
     categories: db.getCategoryNames(),
