@@ -1,31 +1,31 @@
 var categories = {
   "Foo Category": [
     {
-      "name": "foo 1",
+      "name": "Foo 1",
       "id": 1
     },
     {
-      "name": "foo 2",
+      "name": "Foo 2",
       "id": 2
     }
   ],
   "Bar Category": [
     {
-      "name": "bar 1",
+      "name": "Bar 1",
       "id": 1
     },
     {
-      "name": "bar 2",
+      "name": "Bar 2",
       "id": 2
     }
   ],
   "Buzz Category": [
     {
-      "name": "buz 1",
+      "name": "Buzz 1",
       "id": 1
     },
     {
-      "name": "buz 2",
+      "name": "Buzz 2",
       "id": 2
     }
   ]
@@ -34,15 +34,18 @@ var categories = {
 module.exports = {
   getCategoryNames: function() {
     return Object.keys(categories);
+  },
+  getProductsByCategory: function(category) {
+    return categories[category];
   }
 }
 
 
 // Data Layer - db.js (~60 loc)
-// - store data in an object literal
+// - store data in an object literal -- DONE
 // - export
 //   - getCategoryNames -- DONE
-//   - getProductsByCategory
+//   - getProductsByCategory -- DONE
 //   - createProduct
 //   - deleteProduct
 //   - updateProduct

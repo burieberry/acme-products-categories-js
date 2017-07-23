@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<h2>Products for TK Category</h2>
+<h2>Products for {{ category }} </h2>
 
 <form class="well">
   <div class="form-group">
@@ -14,11 +14,13 @@
   <button class="btn btn-primary">Save</button>
 </form>
 
-<ul>
-  <li>
-    <h3>Product name TK</h3>
+<ul class="list-group">
+  {% for product in products %}
+  <li class="list-group-item">
+    <p>{{ product.name }}</p>
     <button class="btn btn-warning">Delete</button>
   </li>
+  {% endfor %}
 </ul>
 
 <button class="btn btn-danger">Delete Category</button>

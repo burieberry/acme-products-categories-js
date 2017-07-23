@@ -14,10 +14,10 @@
   <header>
     <h1>ACME Product Categories</h1>
     <ul class="nav nav-tabs">
-      <li class="active"><a href="">Home</a></li>
+      <li class="active"><a href="/">Home</a></li>
 
       {% for category in categories %}
-      <li><a href="/categories/{{ category }}">{{ category }}</a></li>
+      <li><a href="/categories/{{ category }}/products">{{ category }}</a></li>
       {% endfor %}
 
     </ul>

@@ -11,7 +11,7 @@ app.get('/', function(req, res, next) {
   res.render('index', { categories: db.getCategoryNames() });
 });
 
-app.use('/', require('./routes/categories'));
+app.use('/categories', require('./routes/categories'));
 
 const port = 3000 || process.env.PORT;
 app.listen(port, function(req, res, next) {
