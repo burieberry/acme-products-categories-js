@@ -1,11 +1,19 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
+const bodyParser = require('body-parser');
 const db = require('./db');
 
 const app = express();
 app.set('view engine', 'html')
 app.engine('html', nunjucks.render);
 nunjucks.configure('views', { noCache: true });
+
+app.use(bodyParser.urlencoded({ exdended: false }));
+
+app.use(function(req, res, next) {
+  console.log(req.method, req.url);
+  next();
+});
 
 app.get('/', function(req, res, next) {
   res.render('index', { categories: db.getCategoryNames() });

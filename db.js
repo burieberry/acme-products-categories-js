@@ -37,6 +37,13 @@ module.exports = {
   },
   getProductsByCategory: function(category) {
     return categories[category];
+  },
+  createProduct: function(product, category) {
+    product.id = Math.round(Math.random() * 1000);
+    categories[category].push(product);
+  },
+  createCategory: function(query) {
+    categories[query.category] = [];
   }
 }
 
@@ -46,8 +53,8 @@ module.exports = {
 // - export
 //   - getCategoryNames -- DONE
 //   - getProductsByCategory -- DONE
-//   - createProduct
+//   - createProduct -- DONE
 //   - deleteProduct
 //   - updateProduct
 //   - deleteCategory
-//   - createCategory
+//   - createCategory -- DONE

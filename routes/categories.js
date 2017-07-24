@@ -9,13 +9,24 @@ router.get('/:name/products', function(req, res) {
   });
 });
 
+router.post('/', function(req, res) {
+  db.createCategory(req.body);
+  res.redirect('/categories/' + req.body.category + '/products');
+});
+
+router.post('/:name/products', function(req, res) {
+  db.createProduct(req.body, req.params.name);
+  res.redirect('/categories/' + req.params.name + '/products');
+});
+
+
 module.exports = router;
 
 
 // /routes/categories.js (~30 loc)
 // - 5 route total
 // - GET /categories/:name/products -- DONE
-// - POST /categories
+// - POST /categories -- DONE
 // - DELETE /categories/:name
-// - POST /categories/:name/products/
+// - POST /categories/:name/products/ -- DONE
 // - DELETE /categories/:name/products/:id
