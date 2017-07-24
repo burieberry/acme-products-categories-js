@@ -31,9 +31,15 @@ var categories = {
   ]
 };
 
-// var deleteCategory = function() {
+var deleteCategory = function(category) {
+  categories[category] = null;
+}
 
-// }
+var deleteProduct = function(id, category) {
+  categories[category] = categories[category].filter(function(product) {
+    return product.id !== id;
+  });
+}
 
 module.exports = {
   getCategoryNames: function() {
@@ -42,14 +48,15 @@ module.exports = {
   getProductsByCategory: function(category) {
     return categories[category];
   },
+  createCategory: function(query) {
+    categories[query.category] = [];
+  },
   createProduct: function(product, category) {
     product.id = Math.round(Math.random() * 1000);
     categories[category].push(product);
   },
-  createCategory: function(query) {
-    categories[query.category] = [];
-  }
-  // deleteCategory
+  deleteCategory: deleteCategory,
+  deleteProduct: deleteProduct
 }
 
 

@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<h2>Products for {{ category }} </h2>
+<h2>Products for {{ category }}</h2>
 
 <form class="well" action="/categories/{{ category }}/products" method="POST">
   <div class="form-group">
@@ -18,7 +18,7 @@
   {% for product in products %}
   <li class="list-group-item">
     <p>{{ product.name }}</p>
-    <form action="/categories/{{ category }}/products/{{ product.id }} ?_method=DELETE" method="POST">
+    <form action="/categories/{{ category }}/products/{{ product.id }}?_method=DELETE" method="POST">
       <button class="btn btn-warning">Delete</button>
     </form>
   </li>

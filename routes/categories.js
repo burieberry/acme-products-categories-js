@@ -5,6 +5,7 @@ router.get('/:name/products', function(req, res) {
   res.render('products', {
     categories: db.getCategoryNames(),
     category: req.params.name,
+    id: req.params.id,
     products: db.getProductsByCategory(req.params.name)
   });
 });
@@ -19,15 +20,15 @@ router.post('/:name/products', function(req, res) {
   res.redirect('/categories/' + req.params.name + '/products');
 });
 
-// router.delete('/:name', function(req, res) {
+router.delete('/:name', function(req, res) {
+  db.deleteCategory(req.params.name);
+  res.redirect('/');
+});
 
-// });
-
-// router.delete('/:name/products/:id', function(req, res) {
-
-// });
-
-
+router.delete('/:name/products/:id', function(req, res) {
+  db.deleteProduct(req.params.id, req.params.name);
+  res.redirect('/');
+});
 
 module.exports = router;
 
