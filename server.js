@@ -10,6 +10,7 @@ app.engine('html', nunjucks.render);
 nunjucks.configure('views', { noCache: true });
 
 app.use(bodyParser.urlencoded({ exdended: false }));
+app.use(methodOverride('_method'));
 
 app.use(function(req, res, next) {
   console.log(req.method, req.url);

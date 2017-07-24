@@ -18,10 +18,14 @@
   {% for product in products %}
   <li class="list-group-item">
     <p>{{ product.name }}</p>
-    <button class="btn btn-warning">Delete</button>
+    <form action="/categories/{{ category }}/products?_method=DELETE" method="POST">
+      <button class="btn btn-warning">Delete</button>
+    </form>
   </li>
   {% endfor %}
 </ul>
 
-<button class="btn btn-danger">Delete Category</button>
+<form action="/categories?_method=DELETE" method="POST">
+  <button class="btn btn-danger">Delete Category</button>
+</form>
 {% endblock %}
