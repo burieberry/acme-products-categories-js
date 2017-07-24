@@ -32,11 +32,16 @@ var categories = {
 };
 
 var deleteCategory = function(category) {
-  categories[category] = null;
+  var allCategories = Object.keys(categories);
+  console.log(category, allCategories);
+  allCategories = allCategories.filter(function(name) {
+    return category !== name;
+  });
 }
 
 var deleteProduct = function(id, category) {
   categories[category] = categories[category].filter(function(product) {
+    console.log(product.id, id);
     return product.id !== id;
   });
 }
