@@ -4,7 +4,8 @@
   "description": "acme products now with categories",
   "main": "README.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Burcu Noyan",
   "license": "ISC",
@@ -15,5 +16,13 @@
     "nodemon": "^1.11.0",
     "nunjucks": "^3.0.1"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/burieberry/acme-products-categories-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/burieberry/acme-products-categories-js/issues"
+  },
+  "homepage": "https://github.com/burieberry/acme-products-categories-js#readme"
 }
