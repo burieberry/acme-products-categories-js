@@ -28,6 +28,8 @@ app.listen(port, function(req, res, next) {
   console.log(`Listening on port ${port}`);
 });
 
+// TODO:
+// - active tab state
+// - update product functionality?
+// - error page & 404 handling
 
-// Server.js (~30 loc)
-// - GET '/'

@@ -1,32 +1,44 @@
 var categories = {
-  "Foo Category": [
+  "IPA Category": [
     {
-      "name": "Foo 1",
+      "name": "Goose Island IPA",
       "id": 1
     },
     {
-      "name": "Foo 2",
+      "name": "Lagunitas IPA",
       "id": 2
+    },
+    {
+      "name": "Sierra Nevada Torpedo Extra IPA",
+      "id": 3
     }
   ],
-  "Bar Category": [
+  "Stout Category": [
     {
-      "name": "Bar 1",
+      "name": "Guinness",
       "id": 1
     },
     {
-      "name": "Bar 2",
+      "name": "Porter",
       "id": 2
+    },
+    {
+      "name": "Left Hand Milk Stout Nitro",
+      "id": 3
     }
   ],
-  "Buzz Category": [
+  "Lager Category": [
     {
-      "name": "Buzz 1",
+      "name": "Carlsberg",
       "id": 1
     },
     {
-      "name": "Buzz 2",
+      "name": "Budweiser",
       "id": 2
+    },
+    {
+      "name": "Corona Extra",
+      "id": 3
     }
   ]
 };
@@ -40,16 +52,12 @@ function getProductsByCategory(category) {
 }
 
 function createCategory(name) {
-  if (!name.category) {
-    throw 'Category name is required.';
-  }
+  if (!name.category) throw 'Category name is required.';
   categories[name.category] = [];
 }
 
 function createProduct(product, category) {
-  if (!product.name) {
-    throw 'Product name is required.';
-  }
+  if (!product.name) throw 'Product name is required.';
   product.id = Math.round(Math.random() * 1000);
   categories[category].push(product);
 }
@@ -67,7 +75,3 @@ function deleteProduct(id, category) {
 module.exports = {
   getCategoryNames, getProductsByCategory, createCategory, createProduct, deleteCategory, deleteProduct
 }
-
-
-// Data Layer - db.js (~60 loc)
-//   - updateProduct
