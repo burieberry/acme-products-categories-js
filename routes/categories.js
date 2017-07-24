@@ -23,6 +23,12 @@ router.post('/:name/products', function(req, res) {
 
 // });
 
+// router.delete('/:name/products/:id', function(req, res) {
+
+// });
+
+
+
 module.exports = router;
 
 
