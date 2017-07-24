@@ -1,6 +1,7 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 const db = require('./db');
 
 const app = express();

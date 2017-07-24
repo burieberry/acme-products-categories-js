@@ -31,6 +31,10 @@ var categories = {
   ]
 };
 
+// var deleteCategory = function() {
+
+// }
+
 module.exports = {
   getCategoryNames: function() {
     return Object.keys(categories);
@@ -45,6 +49,7 @@ module.exports = {
   createCategory: function(query) {
     categories[query.category] = [];
   }
+  // deleteCategory
 }
 
 

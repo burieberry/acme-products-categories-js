@@ -19,6 +19,9 @@ router.post('/:name/products', function(req, res) {
   res.redirect('/categories/' + req.params.name + '/products');
 });
 
+// router.delete('/:name', function(req, res) {
+
+// });
 
 module.exports = router;
 
