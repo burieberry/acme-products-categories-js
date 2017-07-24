@@ -30,12 +30,3 @@ router.delete('/:name/products/:id', function(req, res) {
 });
 
 module.exports = router;
-
-
-// /routes/categories.js (~30 loc)
-// - 5 route total
-// - GET /categories/:name/products -- DONE
-// - POST /categories -- DONE
-// - DELETE /categories/:name
-// - POST /categories/:name/products/ -- DONE
-// - DELETE /categories/:name/products/:id

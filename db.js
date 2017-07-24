@@ -31,47 +31,43 @@ var categories = {
   ]
 };
 
-var deleteCategory = function(category) {
-  var allCategories = Object.keys(categories);
-  console.log(category, allCategories);
-  allCategories = allCategories.filter(function(name) {
-    return category !== name;
-  });
+function getCategoryNames() {
+  return Object.keys(categories);
 }
 
-var deleteProduct = function(id, category) {
+function getProductsByCategory(category) {
+  return categories[category];
+}
+
+function createCategory(name) {
+  if (!name.category) {
+    throw 'Category name is required.';
+  }
+  categories[name.category] = [];
+}
+
+function createProduct(product, category) {
+  if (!product.name) {
+    throw 'Product name is required.';
+  }
+  product.id = Math.round(Math.random() * 1000);
+  categories[category].push(product);
+}
+
+function deleteCategory(category) {
+  delete categories[category];
+}
+
+function deleteProduct(id, category) {
   categories[category] = categories[category].filter(function(product) {
-    console.log(product.id, id);
     return product.id !== id;
   });
 }
 
 module.exports = {
-  getCategoryNames: function() {
-    return Object.keys(categories);
-  },
-  getProductsByCategory: function(category) {
-    return categories[category];
-  },
-  createCategory: function(query) {
-    categories[query.category] = [];
-  },
-  createProduct: function(product, category) {
-    product.id = Math.round(Math.random() * 1000);
-    categories[category].push(product);
-  },
-  deleteCategory: deleteCategory,
-  deleteProduct: deleteProduct
+  getCategoryNames, getProductsByCategory, createCategory, createProduct, deleteCategory, deleteProduct
 }
 
 
 // Data Layer - db.js (~60 loc)
-// - store data in an object literal -- DONE
-// - export
-//   - getCategoryNames -- DONE
-//   - getProductsByCategory -- DONE
-//   - createProduct -- DONE
-//   - deleteProduct
 //   - updateProduct
-//   - deleteCategory
-//   - createCategory -- DONE
