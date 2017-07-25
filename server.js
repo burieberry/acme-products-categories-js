@@ -40,6 +40,5 @@ app.listen(port, function(req, res, next) {
 });
 
 // TODO:
-// - active tab state
-// - "update product" functionality?
+// - "update product" functionality
 

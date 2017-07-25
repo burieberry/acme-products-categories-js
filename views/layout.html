@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ACME Products Categories</title>
-
-  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body class="container">
@@ -14,19 +14,36 @@
   <header>
     <h1>ACME Product Categories</h1>
     <ul class="nav nav-tabs">
-      <li><a href="/">Home</a></li>
+      <li {% if nav === home %} class="active" {% endif %} >
+        <a href="/">Home</a>
+      </li>
 
       {% for category in categories %}
-      <li><a href="/categories/{{ category }}/products">{{ category }}</a></li>
+      <li {% if nav === category %} class="active" {% endif %}>
+        <a href="/categories/{{ category }}/products">{{ category }}</a>
+      </li>
       {% endfor %}
 
     </ul>
   </header>
 
-  <section>
-  <!-- Page content -->
+  <section class="tab-content">
+    <div class="tab-pane active">
     {% block content %}
+      <!-- Page content -->
     {% endblock %}
+    </div>
   </section>
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".nav-tabs a").click(function(){
+        $(this).tab('show');
+      });
+    });
+  </script>
 </body>
 </html>

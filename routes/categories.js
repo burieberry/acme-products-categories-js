@@ -5,7 +5,8 @@ router.get('/:name/products', function(req, res) {
   res.render('products', {
     categories: db.getCategoryNames(),
     category: req.params.name,
-    products: db.getProductsByCategory(req.params.name)
+    products: db.getProductsByCategory(req.params.name),
+    nav: req.params.name
   });
 });
 
