@@ -15,13 +15,6 @@ app.use('/vendor', express.static(path.join(__dirname, 'node-modules')));
 app.use(bodyParser.urlencoded({ exdended: false }));
 app.use(methodOverride('_method'));
 
-// app.use('/', function(req, res, next) {
-//   res.on('finish', function() {
-//     console.log(req.method, req.url, res.statusCode);
-//   });
-//   next();
-// });
-
 app.get('/', function(req, res, next) {
   res.render('index', { categories: db.getCategoryNames() });
 });
