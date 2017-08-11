@@ -51,9 +51,9 @@ function getProductsByCategory(category) {
   return categories[category];
 }
 
-function createCategory(name) {
-  if (!name.category) throw 'Category name is required.';
-  categories[name.category] = [];
+function createCategory(product) {
+  if (!product.category) throw 'Category name is required.';
+  categories[product.category] = [];
 }
 
 function createProduct(product, category) {
